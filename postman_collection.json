@@ -1,0 +1,72 @@
+{
+  "info": {
+    "_postman_id": "fitness-booking-api-sample",
+    "name": "Fitness Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Classes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/classes?timezone=Asia/Kolkata",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["classes"],
+          "query": [
+            {
+              "key": "timezone",
+              "value": "Asia/Kolkata"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"class_id\":1,\"client_name\":\"John Doe\",\"client_email\":\"john@example.com\"}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/book",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["book"]
+        }
+      }
+    },
+    {
+      "name": "Get Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/bookings?client_email=john@example.com",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["bookings"],
+          "query": [
+            {
+              "key": "client_email",
+              "value": "john@example.com"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
